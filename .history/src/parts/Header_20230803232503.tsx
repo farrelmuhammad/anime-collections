@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({ theme, position }) => {
     return (
         <>
             <header className={[position, "w-full z-40 px-4"].join(" ")}>
-                <div className="container mx-auto py-5">
+                <div className="container mx-auto">
                     <div className="flex flex-stretch items-center">
                         <div className="w-56 items-center flex">
                             <Link to="/">
@@ -22,13 +22,7 @@ const Header: React.FC<HeaderProps> = ({ theme, position }) => {
                                 />
                             </Link>
                         </div>
-                        <div className="w-full flex items-center justify-center">
-                            <input
-                                type="text"
-                                placeholder="Search"
-                                className="w-full md:w-96 py-2 px-4 rounded-full bg-gray-100 focus:outline-none"
-                            />
-                        </div>
+                        <div className="w-full"></div>
                         <div className="w-auto">
                             <ul
                                 className={["fixed bg-white inset-0 flex flex-col items-center justify-center opacity-0 md:visible md:flex-row md:bg-transparent md:relative md:opacity-100 md:flex md:items-center", toggleMainMenu ? "opacity-100 z-30 visible" : "invisible opacity-0"].join(" ")}

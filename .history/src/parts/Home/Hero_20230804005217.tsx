@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Hero: React.FC = () => {
-    const [randomImage, setRandomImage] = useState<string | null>(null);
+    const [randomImage, setRandomImage] = useState<string | null>("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUvYdMZuK2RiygL5TZZZIx8VLgL6i42YdUhg&usqp=CAU");
 
-    useEffect(() => {
-        fetchRandomAnimeImage();
-    }, []);
+    // useEffect(() => {
+    //     fetchRandomAnimeImage();
+    // }, []);
 
-    const fetchRandomAnimeImage = async () => {
-        try {
-            const response = await axios.get("https://picsum.photos/800/600");
-            console.log(response.request.responseURL);
-            setRandomImage(response.request.responseURL);
-        } catch (error) {
-            console.error("Error fetching random image:", error);
-        }
-    };
+    // const fetchRandomAnimeImage = async () => {
+    //     try {
+    //         const response = await axios.get("https://picsum.photos/800/600");
+    //         console.log(response.request.responseURL);
+    //         setRandomImage(response.request.responseURL);
+    //     } catch (error) {
+    //         console.error("Error fetching random image:", error);
+    //     }
+    // };
 
     return (
         <section className="flex items-center hero">

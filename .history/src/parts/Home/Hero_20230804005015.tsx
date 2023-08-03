@@ -66,13 +66,18 @@ const Hero: React.FC = () => {
             </div>'
                         ></button>
                     </div>
-                    {randomImage && ( // Add this condition to render the image only when randomImage is not null
+                    <img
+                        src=""
+                        alt="hero 1"
+                        className="absolute inset-0 md:relative w-full h-full object-cover object-center"
+                    />
+                    {/* {randomImage && ( // Add this condition to render the image only when randomImage is not null
                         <img
                             src={randomImage}
                             alt="hero 1"
                             className="absolute inset-0 md:relative w-full h-full object-cover object-center"
                         />
-                    )}
+                    )} */}
                 </div>
             </div>
         </section>

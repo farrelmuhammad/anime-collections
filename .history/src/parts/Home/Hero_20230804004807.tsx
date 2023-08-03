@@ -26,9 +26,10 @@ const Hero: React.FC = () => {
                     Season 4
                 </h1>
                 <h2 className="px-8 text-base md:px-0 md:text-lg my-6 tracking-wide">
-                    With his hometown in ruins, young Eren Jeager becomes determined to fight back against the giant Titans that threaten to destroy the human race.
+                    Kami menyediakan furniture berkelas yang
+                    <br className="hidden lg:block" />
+                    membuat ruangan terasa homey
                 </h2>
-
                 <div>
                     <a
                         href="#browse-the-room"

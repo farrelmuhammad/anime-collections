@@ -22,13 +22,14 @@ const Hero: React.FC = () => {
         <section className="flex items-center hero">
             <div className="w-full absolute z-20 inset-0 md:relative md:w-1/2 text-center flex flex-col justify-center hero-caption">
                 <h1 className="text-3xl md:text-5xl leading-tight font-semibold">
-                    Shingeki No Kyojin: <br className="" />
-                    Season 4
+                    The Room <br className="" />
+                    You've Dreaming
                 </h1>
                 <h2 className="px-8 text-base md:px-0 md:text-lg my-6 tracking-wide">
-                    With his hometown in ruins, young Eren Jeager becomes determined to fight back against the giant Titans that threaten to destroy the human race.
+                    Kami menyediakan furniture berkelas yang
+                    <br className="hidden lg:block" />
+                    membuat ruangan terasa homey
                 </h2>
-
                 <div>
                     <a
                         href="#browse-the-room"

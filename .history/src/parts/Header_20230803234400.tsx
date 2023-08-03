@@ -22,7 +22,7 @@ const Header: React.FC<HeaderProps> = ({ theme, position }) => {
                                 />
                             </Link>
                         </div>
-                        <div className="w-full flex items-center justify-center">
+                        <div className="flex items-center justify-center flex-1">
                             <input
                                 type="text"
                                 placeholder="Search"
