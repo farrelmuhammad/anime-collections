@@ -5,16 +5,14 @@ import { Link } from "react-router-dom";
 // import Carousel from "../../components/Carousel";
 import { useQuery } from '@apollo/client';
 import { GET_ANIME_LIST } from '../../graphql/queries';
-// import Carousel from "../../components/Carousel";
 
-interface DataItem {
+interface Product {
     id: number;
-    imageUrl: string;
     title: string;
+    imageUrl: string;
     price: number;
     idc: number;
 }
-
 
 function Loading() {
     return (
@@ -40,7 +38,7 @@ function Loading() {
 const AnimeList: React.FC = () => {
     // const { data, error, run, isLoading } = useAsync<{ data: Product[] }>();
     const { loading, error, data } = useQuery(GET_ANIME_LIST);
-    console.log(loading, error, data);
+    console.log(data);
 
     const refContainer = useRef<HTMLDivElement>(null);
 
@@ -81,35 +79,23 @@ const AnimeList: React.FC = () => {
                     )}
                 </div>
 
-                {/* {loading ? (
+                {/* {isLoading ? (
                     <div
-                        className="overflow-x-hidden px-4"
-                        id="carousel"
-                        ref={refContainer}
+                        className="flex -mx-4 flex-row relative"
+                        style={{
+                            paddingLeft:
+                                refContainer.current?.getBoundingClientRect()?.left - 16 || 0,
+                        }}
                     >
-                        {refContainer.current && (
-                            <div
-                                className="flex -mx-4 flex-row relative"
-                                style={{
-                                    paddingLeft:
-                                        refContainer.current.getBoundingClientRect().left - 16 || 0,
-                                }}
-                            >
-                                <Loading />
-                            </div>
-                        )}
+                        <Loading />
                     </div>
                 ) : error ? (
                     JSON.stringify(error)
                 ) : data.data.length === 0 ? (
                     "No Product Found"
                 ) : (
-                    <div
-                        className="overflow-x-hidden px-4"
-                        id="carousel"
-                        ref={refContainer}
-                    >
-                        {data.map((item: DataItem) => {
+                    <Carousel refContainer={refContainer}>
+                        {data.data.map((item) => {
                             return (
                                 <div className="px-4 relative card group" key={item.id}>
                                     <div
@@ -146,8 +132,7 @@ const AnimeList: React.FC = () => {
                                 </div>
                             );
                         })}
-                    </div>
-
+                    </Carousel>
                 )} */}
             </div>
         </section>

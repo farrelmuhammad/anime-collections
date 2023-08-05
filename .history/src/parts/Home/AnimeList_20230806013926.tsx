@@ -5,16 +5,15 @@ import { Link } from "react-router-dom";
 // import Carousel from "../../components/Carousel";
 import { useQuery } from '@apollo/client';
 import { GET_ANIME_LIST } from '../../graphql/queries';
-// import Carousel from "../../components/Carousel";
+import Carousel from "../../components/Carousel";
 
-interface DataItem {
+interface Product {
     id: number;
-    imageUrl: string;
     title: string;
+    imageUrl: string;
     price: number;
     idc: number;
 }
-
 
 function Loading() {
     return (
@@ -63,7 +62,7 @@ const AnimeList: React.FC = () => {
                 </div>
             </div>
             <div className="overflow-x-hidden px-4" id="carousel">
-                <div
+                {/* <div
                     className="overflow-x-hidden px-4"
                     id="carousel"
                     ref={refContainer}
@@ -79,9 +78,9 @@ const AnimeList: React.FC = () => {
                             <Loading />
                         </div>
                     )}
-                </div>
+                </div> */}
 
-                {/* {loading ? (
+                {loading ? (
                     <div
                         className="overflow-x-hidden px-4"
                         id="carousel"
@@ -104,12 +103,8 @@ const AnimeList: React.FC = () => {
                 ) : data.data.length === 0 ? (
                     "No Product Found"
                 ) : (
-                    <div
-                        className="overflow-x-hidden px-4"
-                        id="carousel"
-                        ref={refContainer}
-                    >
-                        {data.map((item: DataItem) => {
+                    <Carousel refContainer={refContainer}>
+                        {data.data.map((item) => {
                             return (
                                 <div className="px-4 relative card group" key={item.id}>
                                     <div
@@ -146,9 +141,8 @@ const AnimeList: React.FC = () => {
                                 </div>
                             );
                         })}
-                    </div>
-
-                )} */}
+                    </Carousel>
+                )}
             </div>
         </section>
     );

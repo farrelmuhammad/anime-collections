@@ -40,7 +40,7 @@ function Loading() {
 const AnimeList: React.FC = () => {
     // const { data, error, run, isLoading } = useAsync<{ data: Product[] }>();
     const { loading, error, data } = useQuery(GET_ANIME_LIST);
-    console.log(loading, error, data);
+    console.log(loading, error, data.Page);
 
     const refContainer = useRef<HTMLDivElement>(null);
 
@@ -63,7 +63,7 @@ const AnimeList: React.FC = () => {
                 </div>
             </div>
             <div className="overflow-x-hidden px-4" id="carousel">
-                <div
+                {/* <div
                     className="overflow-x-hidden px-4"
                     id="carousel"
                     ref={refContainer}
@@ -79,9 +79,9 @@ const AnimeList: React.FC = () => {
                             <Loading />
                         </div>
                     )}
-                </div>
+                </div> */}
 
-                {/* {loading ? (
+                {loading ? (
                     <div
                         className="overflow-x-hidden px-4"
                         id="carousel"
@@ -148,7 +148,7 @@ const AnimeList: React.FC = () => {
                         })}
                     </div>
 
-                )} */}
+                )}
             </div>
         </section>
     );

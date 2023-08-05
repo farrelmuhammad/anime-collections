@@ -40,7 +40,7 @@ function Loading() {
 const AnimeList: React.FC = () => {
     // const { data, error, run, isLoading } = useAsync<{ data: Product[] }>();
     const { loading, error, data } = useQuery(GET_ANIME_LIST);
-    console.log(loading, error, data);
+    console.log(loading, error, data.map((item: any) => item));
 
     const refContainer = useRef<HTMLDivElement>(null);
 

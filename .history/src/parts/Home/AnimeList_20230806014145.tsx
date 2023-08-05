@@ -5,16 +5,11 @@ import { Link } from "react-router-dom";
 // import Carousel from "../../components/Carousel";
 import { useQuery } from '@apollo/client';
 import { GET_ANIME_LIST } from '../../graphql/queries';
-// import Carousel from "../../components/Carousel";
+import Carousel from "../../components/Carousel";
 
-interface DataItem {
-    id: number;
-    imageUrl: string;
-    title: string;
-    price: number;
-    idc: number;
-}
-
+interface AnimeData {
+    data: Product[]; // Assuming Product is the type for your data items
+  }
 
 function Loading() {
     return (
@@ -39,7 +34,7 @@ function Loading() {
 
 const AnimeList: React.FC = () => {
     // const { data, error, run, isLoading } = useAsync<{ data: Product[] }>();
-    const { loading, error, data } = useQuery(GET_ANIME_LIST);
+    const { loading, error, data } = useQuery<AnimeData>(GET_ANIME_LIST);
     console.log(loading, error, data);
 
     const refContainer = useRef<HTMLDivElement>(null);
@@ -63,7 +58,7 @@ const AnimeList: React.FC = () => {
                 </div>
             </div>
             <div className="overflow-x-hidden px-4" id="carousel">
-                <div
+                {/* <div
                     className="overflow-x-hidden px-4"
                     id="carousel"
                     ref={refContainer}
@@ -79,9 +74,9 @@ const AnimeList: React.FC = () => {
                             <Loading />
                         </div>
                     )}
-                </div>
+                </div> */}
 
-                {/* {loading ? (
+                {loading ? (
                     <div
                         className="overflow-x-hidden px-4"
                         id="carousel"
@@ -104,12 +99,8 @@ const AnimeList: React.FC = () => {
                 ) : data.data.length === 0 ? (
                     "No Product Found"
                 ) : (
-                    <div
-                        className="overflow-x-hidden px-4"
-                        id="carousel"
-                        ref={refContainer}
-                    >
-                        {data.map((item: DataItem) => {
+                    <Carousel refContainer={refContainer}>
+                        {data.map((item) => {
                             return (
                                 <div className="px-4 relative card group" key={item.id}>
                                     <div
@@ -146,9 +137,8 @@ const AnimeList: React.FC = () => {
                                 </div>
                             );
                         })}
-                    </div>
-
-                )} */}
+                    </Carousel>
+                )}
             </div>
         </section>
     );

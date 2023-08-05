@@ -63,7 +63,7 @@ const AnimeList: React.FC = () => {
                 </div>
             </div>
             <div className="overflow-x-hidden px-4" id="carousel">
-                <div
+                {/* <div
                     className="overflow-x-hidden px-4"
                     id="carousel"
                     ref={refContainer}
@@ -79,9 +79,9 @@ const AnimeList: React.FC = () => {
                             <Loading />
                         </div>
                     )}
-                </div>
+                </div> */}
 
-                {/* {loading ? (
+                {loading ? (
                     <div
                         className="overflow-x-hidden px-4"
                         id="carousel"
@@ -109,7 +109,7 @@ const AnimeList: React.FC = () => {
                         id="carousel"
                         ref={refContainer}
                     >
-                        {data.map((item: DataItem) => {
+                        {data.page.media.map((item: DataItem) => {
                             return (
                                 <div className="px-4 relative card group" key={item.id}>
                                     <div
@@ -148,7 +148,7 @@ const AnimeList: React.FC = () => {
                         })}
                     </div>
 
-                )} */}
+                )}
             </div>
         </section>
     );
