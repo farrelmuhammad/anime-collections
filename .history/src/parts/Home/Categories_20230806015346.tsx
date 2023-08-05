@@ -112,6 +112,9 @@ const Categories: React.FC<CategoriesProps> = () => {
                     <button className="ml-auto bg-red-500 text-white px-4 py-2 rounded-lg">
                         + Add
                     </button>
+                    <button className="ml-auto bg-red-500 text-white px-4 py-2 rounded-lg">
+                        + Add
+                    </button>
                 </div>
 
                 <div className="grid grid-rows-2 grid-cols-9 gap-4">

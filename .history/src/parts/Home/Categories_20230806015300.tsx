@@ -107,10 +107,11 @@ const Categories: React.FC<CategoriesProps> = () => {
             <div className="container mx-auto">
                 <div className="flex flex-start mb-4">
                     <h3 className="text-2xl capitalize font-semibold">
-                        Anime Collections
+                        Anime Collections <br />
+                        that we designed for you
                     </h3>
-                    <button className="ml-auto bg-red-500 text-white px-4 py-2 rounded-lg">
-                        + Add
+                    <button className="ml-auto bg-blue-500 text-white px-4 py-2 rounded">
+                        Add
                     </button>
                 </div>
 
